@@ -1,0 +1,20 @@
+body
+{
+    background-color: black !important;
+    background: url("Images/darkericon.png") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+}
+#logo_image
+{
+    width: 20%;
+    position: relative;
+    left:41%;
+}
+#leak_image
+{
+    width: 30%;
+    position: absolute;
+    left:35%;
+}
