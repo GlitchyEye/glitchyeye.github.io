@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool bg</title>
+    <!--Just so you guys know. There isn't any lore here. Its just something I made so I can use it as a countdown for a stream :) -->
+    <style>
+        body
+        {
+            background-color: black;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            user-select: none;
+        }
+        #generation
+        {
+            width: 100%;
+            height: 800px;
+        }
+        .classy
+        {
+            color:green;
+            text-shadow: 0 0 15px rgb(43, 255, 0);
+            font-size: 250%;
+            font-family: consolas;
+        }
+        #timer
+        {
+            color:white;
+            text-shadow: 0 0 15px white;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            font-size: 800%;
+            font-family: consolas;
+        }
+    </style>
+    <script>
+        function great() {
+            var current = 0;
+            var html = document.getElementById("generation");
+            var output = "";
+        
+            for (let i = 0; i < 1891; i++) {
+        
+                if (current == 85) {
+                    output += "<br>";
+                    current = 0;
+                } else {
+                    output += "<span id='c" + i + "' class='classy'>" + Math.floor(Math.random() * 2) + "</span>";
+                    current++;
+                }
+            }
+        
+            html.innerHTML += output;
+            loop();
+            start();
+        }
+        function loop()
+        {
+            setInterval(() => {
+                var html = document.getElementById("c"+Math.floor(Math.random() * 1891));
+                html.innerText = Math.floor(Math.random() * 2);
+            }, 1);
+        }
+        function start()
+        {
+            let time = 2 * 60;
+
+            const countdown = setInterval(() => {
+      
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+    
+              
+                const formattedTime = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+                
+                document.getElementById('timer').textContent = formattedTime;
+    
+                
+                if (time <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById('timer').textContent = "Let's begin!";
+                }
+    
+                
+                time--;
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="great()">
+    <div id="timer">02:00</div>
+    <div id="generation"></div>
+</body>
+</html>
