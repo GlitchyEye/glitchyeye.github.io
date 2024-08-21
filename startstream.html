@@ -44,9 +44,9 @@
             var html = document.getElementById("generation");
             var output = "";
         
-            for (let i = 0; i < 2400; i++) {
+            for (let i = 0; i < 1891; i++) {
         
-                if (current == 95) {
+                if (current == 85) {
                     output += "<br>";
                     current = 0;
                 } else {
@@ -62,7 +62,7 @@
         function loop()
         {
             setInterval(() => {
-                var html = document.getElementById("c"+Math.floor(Math.random() * 2400));
+                var html = document.getElementById("c"+Math.floor(Math.random() * 1891));
                 html.innerText = Math.floor(Math.random() * 2);
             }, 1);
         }
@@ -85,11 +85,7 @@
                 
                 if (time <= 0) {
                     clearInterval(countdown);
-                    document.getElementById('timer').textContent = "00:00";
-                    setTimeout(function()
-                    {
-                        document.getElementById('timer').textContent = "Let's begin!";
-                    },1000)
+                    document.getElementById('timer').textContent = "Let's begin!";
                 }
     
                 
