@@ -85,7 +85,11 @@
                 
                 if (time <= 0) {
                     clearInterval(countdown);
-                    document.getElementById('timer').textContent = "Let's begin!";
+                    document.getElementById('timer').textContent = "00:00";
+                                        setTimeout(function()
+                               {
+                                    document.getElementById('timer').textContent = "Let's begin!";
+                               }, 1000);
                 }
     
                 
